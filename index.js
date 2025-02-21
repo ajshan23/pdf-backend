@@ -10,7 +10,7 @@ const app = express();
 const PORT = 3005;
 app.use(express.json());
 app.use(cors()); // Enable CORS
-app.use(express.static('/var/www/evee/pdf/pdf-frontend/dist'));
+app.use(express.static('/var/www/pdf/pdf-frontend/dist'));
 
 // AWS S3 Configuration
 const s3 = new S3Client({
@@ -423,7 +423,7 @@ app.post("/generate-pdf", async (req, res) => {
   }
 });
 app.get("*", (req, res) => {
-  res.sendFile('/var/www/evee/pdf/pdf-frontend/dist/index.html');
+  res.sendFile('/var/www/pdf/pdf-frontend/dist/index.html');
 });
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
