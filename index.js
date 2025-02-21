@@ -9,14 +9,18 @@ dotenv.config();
 
 const app = express();
 const PORT = 3005;
-app.use(express.json());
+
 
 // Correct and more specific CORS configuration:
-app.use(cors({
-  origin: "*", // Or "*" for all origins (less secure)
-  credentials: true // Only needed if you're using cookies or Authorization headers
-}));
+app.use(
+  cors({
+    origin: "*", // Allow all origins (INSECURE - DO NOT USE IN PRODUCTION)
+    methods: ["GET", "POST", "OPTIONS"], // Or specify the methods you need
+    allowedHeaders: ["Content-Type"], // Or specify the headers you need
+  })
+);
 
+app.use(express.json());
 
 app.use(express.static('/var/www/pdf/pdf-frontend/dist'));
 
