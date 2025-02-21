@@ -9,7 +9,11 @@ dotenv.config();
 const app = express();
 const PORT = 3005;
 app.use(express.json());
-app.use(cors()); // Enable CORS
+app.use(cors(
+  {
+    origin: "*"
+  }
+)); // Enable CORS
 app.use(express.static('/var/www/pdf/pdf-frontend/dist'));
 
 // AWS S3 Configuration
