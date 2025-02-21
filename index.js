@@ -7,14 +7,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 3005;
-app.use(express.json());
 app.use(cors({
   origin: "*", // Allow all origins
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // If using cookies or authentication
   allowedHeaders: "Content-Type,Authorization"
 }));
+const PORT = 3005;
+app.use(express.json());
+
 
 
 app.use(express.static('/var/www/pdf/pdf-frontend/dist'));
@@ -45,6 +46,7 @@ function numberToWords(num) {
 }
 
 // Generate and Upload PDF API (No Local Storage)
+app.options("*", cors()); // Pre-flight request handler
 app.post("/generate-pdf", async (req, res) => {
   const { companyName, date, items } = req.body;
   const totalPrice = items.reduce((total, item) => {
