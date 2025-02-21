@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* width: 100%; */
+            margin: 0;
+            /* padding-inline: 50px; */
+            font-family: "DM Sans", sans-serif;
+
+        }
+
+        .line-container {
+            padding-top: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: rgb(48, 48, 244);
+            position: relative;
+            border-radius: 10%;
+        }
+
+        .cut-out {
+            position: absolute;
+            left: 70%;
+            width: 5%;
+            height: 3px;
+            background-color: white;
+            /* Match the background color */
+        }
+
+        #headSection {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* padding-top: 30px; */
+            padding-bottom: 30px;
+
+        }
+
+        #logoSection {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+
+
+        }
+
+        #logoSection h1 {
+            font-weight: 1000;
+            font-size: 60px;
+        }
+
+        #addessInfoSection {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            justify-content: center;
+        }
+
+        .infoText {
+            color: rgb(87, 81, 81);
+            font-size: 15px;
+        }
+
+        #bodySection {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #startSection {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .BoldText {
+            font-weight: 700;
+            font-size: 14px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="line-container">
+        <div class="line">
+            <div class="cut-out"></div>
+        </div>
+
+    </div>
+    <div id="headSection">
+        <div id="logoSection">
+            <img src="./logo.png" />
+            <h1>Glomium</h1>
+        </div>
+        <div id="addessInfoSection">
+            <div class="infoText">calicut</div>
+            <div class="infoText">info@glomium.com</div>
+            <div class="infoText">www.glomium.com</div>
+        </div>
+    </div>
+    <div id="bodySection">
+        <div id="startSection">
+            <div class="BoldText">Jan 25, 2025</div>
+            <div class="BoldText">
+                Dear Haleema,
+            </div>
+            <div class="BoldText">
+                Thank you for considering us for your Business website project. We are pleased to provide
+                you with a quotation based on your requirements
+            </div>
+        </div>
+        <div id="projectDetails">
+            
+        </div>
+
+    </div>
+
+</body>
+
+</html>
